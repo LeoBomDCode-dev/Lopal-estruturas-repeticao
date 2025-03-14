@@ -1,4 +1,4 @@
-           Quer recomçar? Aperte f5!
+
 <!DOCTYPE html>
 <htl lang="pt-br">
 <head>
@@ -6,45 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Adivinhação</title>
 </head>
-<body>  
-    
+<body> 
    <script>
           function jogoAdivinhação(){
             
-            let escolha = prompt("Bem vindo ao jogo da adivinhação! Digite 1 para começar e 2 para encerrar ") 
+            let escolha = prompt("Bem-vindo ao Jogo da adivinhação! Digite 1 para começar e 2 para encerrar ") 
            
-             if(escolha == 1) {
-
-            let numeroPensado = math.floor (math.random() * 10 + 1);
+        if (escolha == 1) {
+            let numeroPensado = Math.floor(Math.random() * 10 + 1);
           
-            for(tentativa = 1; tentativa <= 3; tentativa++){
+            for(let tentativa = 1; tentativa <= 3; tentativa++) {
                 let chute = prompt(" Adivinhe um número de 1 a 10 ");
                 
-                if (chute == numeroPensado){
-                        alert(" Parabéns, você ganhou ");
+                if (chute == numeroPensado) {
+                        alert(" Parabéns, você ganhou! ");
                         break;
-                
-                    }else{
-                        alert(" Você errou! Você tem mais " + (3 - tentativa) +
-                         " Tentativas. ");
+                    } else {
+                        alert(" Você errou! Você tem mais " + (3 - tentativa) + " Tentativas. ");
+                    }
                          
-                         if(tentativa == 3){ 
-                            document.write(" Eu tinha pensado " + numeroPensado);
-                         }else if(escolha == 2){
-                            alert(" Você escolheu ENCERRAR o jogo. Até próxima!");
-                         }else{
-                            alert(" Número invalido. Tente novamente. ");
-
+                         if (tentativa == 3) { 
+                            document.write("Eu tinha pensado " + numeroPensado + "." );
                          }
-                        }
-                       } 
-                      }   
-                     }
-                          
-                     
-                 
+                            
+                    }  
+            } else if (escolha == 2) {
+                 alert(" Você escolheu ENCERRAR o jogo. Até a próxima!");
+            } else {
+                 alert(" Número invalido. Tente novamente. ");
+          
+            }
+          }
+                            
             
-            jogoAdivinhação();
+          jogoAdivinhação();
 
     </script>   
 </body>
